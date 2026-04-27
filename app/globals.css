@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================
+   CARE360 AI - Global Styles
+   A Hoshmand AI Product
+   =========================================== */
+
+@layer base {
+  :root {
+    /* Primary Teal */
+    --teal-50: 240 253 250;
+    --teal-100: 204 251 241;
+    --teal-400: 45 212 191;
+    --teal-500: 20 184 166;
+    --teal-600: 13 148 136;
+    --teal-700: 15 118 110;
+    
+    /* Navy */
+    --navy-800: 22 45 84;
+    --navy-900: 15 33 64;
+    --navy-950: 10 22 40;
+    
+    /* Slate */
+    --slate-50: 248 250 252;
+    --slate-100: 241 245 249;
+    --slate-200: 226 232 240;
+    --slate-300: 203 213 225;
+    --slate-400: 148 163 184;
+    --slate-500: 100 116 139;
+    --slate-600: 71 85 105;
+    --slate-700: 51 65 85;
+    --slate-800: 30 41 59;
+    
+    --background: 248 250 252;
+    --foreground: 71 85 105;
+    --card: 255 255 255;
+    --card-foreground: 51 65 85;
+    --primary: 13 148 136;
+    --primary-foreground: 255 255 255;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 13 148 136;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-slate-200;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-600;
+    font-feature-settings: "cv11", "ss01";
+  }
+}
+
+@layer components {
+  /* Button variants */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-lg transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-teal-600 text-white hover:bg-teal-500 focus:ring-teal-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 hover:border-slate-400 focus:ring-slate-400;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-teal-600 hover:bg-teal-50 focus:ring-teal-500;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-500 focus:ring-red-500;
+  }
+  
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+  
+  .btn-lg {
+    @apply px-8 py-4 text-base;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white border border-slate-200 rounded-lg shadow-card;
+  }
+  
+  .card-hover {
+    @apply hover:border-slate-300 hover:shadow-card-hover transition-all duration-200;
+  }
+
+  /* Input styles */
+  .input {
+    @apply w-full px-4 py-3 text-base bg-slate-100 border border-slate-200 rounded-lg text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-colors duration-150;
+  }
+
+  /* Chip styles */
+  .chip {
+    @apply inline-flex items-center px-3 py-1.5 text-sm font-medium bg-white border border-slate-200 rounded-md cursor-pointer transition-colors duration-150 hover:border-teal-300 hover:bg-teal-50;
+  }
+  
+  .chip-selected {
+    @apply bg-navy-900 border-navy-900 text-white hover:bg-navy-900 hover:border-navy-900;
+  }
+
+  /* Urgency banners */
+  .urgency-routine {
+    @apply bg-green-50 border border-green-500 text-green-800;
+  }
+  
+  .urgency-soon {
+    @apply bg-amber-50 border border-amber-500 text-amber-800;
+  }
+  
+  .urgency-urgent {
+    @apply bg-orange-50 border border-orange-500 text-orange-800;
+  }
+  
+  .urgency-emergency {
+    @apply bg-red-50 border border-red-500 text-red-800;
+  }
+
+  /* Chat bubbles */
+  .chat-bubble-ai {
+    @apply bg-white border border-slate-200 text-slate-700 rounded-lg rounded-bl-sm;
+  }
+  
+  .chat-bubble-user {
+    @apply bg-teal-600 text-white rounded-lg rounded-br-sm;
+  }
+
+  /* Status badges */
+  .status-open {
+    @apply bg-green-100 text-green-700;
+  }
+  
+  .status-closed {
+    @apply bg-slate-100 text-slate-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .slide-in {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Fonts loaded via next/font in layout.tsx */
